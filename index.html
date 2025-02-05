@@ -175,30 +175,22 @@
 </head>
 <body>
     <section id="section1">
-        <h1>Summary and Further Concepts of SGD: Consolidating Our Knowledge and Exploring New Frontiers</h1>
-        <div class="image-placeholder">
+<div class="image-placeholder">
             <img src="/placeholder.svg?height=300&width=600" alt="A hiker standing at a scenic viewpoint, looking back at the path they've traversed and ahead towards the unexplored mountain ranges, symbolizing the review of learned concepts and the introduction to advanced topics in gradient descent.">
         </div>
-        <p>Congratulations, optimization masters! You've journeyed through the core concepts of Gradient Descent and Stochastic Gradient Descent, witnessing their power and intricacies. In this final lesson, we'll consolidate our knowledge, address some lingering questions, and peek into the exciting world of advanced optimization techniques. Let's take a moment to reflect on our journey and then forge ahead!</p>
+        <h1>Summary and Further Concepts of SGD: Consolidating Our Knowledge and Exploring New Frontiers</h1>
+        
+        <p>You've journeyed through the core concepts of Gradient Descent and Stochastic Gradient Descent, witnessing their power and intricacies. In this final lesson, we'll consolidate our knowledge, address some lingering questions, and peek into the exciting world of advanced optimization techniques. Let's take a moment to reflect on our journey and then forge ahead!</p>
         <div class="continue-button" onclick="showNextSection(2)">Continue</div>
     </section>
 
     <section id="section2">
         <h2>Recap: The Journey So Far</h2>
         <p>We began our adventure by understanding the need for optimization in machine learning – the quest to find the best model parameters that minimize our cost function. We then discovered Gradient Descent, our trusty algorithm for navigating the cost function landscape.</p>
-        <div class="visual-aid">
-            <h3>The Optimization Journey</h3>
-            <p>A visual timeline summarizing the key concepts covered so far:</p>
-            <ol>
-                <li><strong>Introduction to Optimization:</strong> The need to minimize the cost function.</li>
-                <li><strong>Gradient Descent:</strong> The iterative algorithm for finding the minimum.</li>
-                <li><strong>Learning Rate:</strong> The step size in each iteration.</li>
-                <li><strong>Linear Regression Example:</strong> Applying Gradient Descent to find the best-fitting line.</li>
-                <li><strong>Challenges:</strong> Local minima, choosing the right learning rate.</li>
-                <li><strong>Stochastic Gradient Descent:</strong> Introducing randomness for faster optimization.</li>
-            </ol>
-            <p>A visual recap of our journey through the world of Gradient Descent and Stochastic Gradient Descent.</p>
+        <div class="image-placeholder">
+            <img src="images/journeypng.svg?height=300&width=600" alt="...">
         </div>
+
         <p>We explored how Gradient Descent works step-by-step, iteratively refining our parameters by moving in the opposite direction of the gradient. We learned about the crucial role of the learning rate and saw how Gradient Descent can be applied to train a linear regression model. We also grappled with challenges like local minima and the complexities of real-world cost functions.</p>
         <div class="continue-button" onclick="showNextSection(3)">Continue</div>
     </section>
@@ -221,12 +213,12 @@
         </div>
         <p>Let's break down this formula:</p>
         <ul>
-            <li>$$ \beta_j $$: The j-th parameter being optimized.</li>
-            <li>$$ \alpha $$: The learning rate.</li>
-            <li>$$ m $$: The size of the mini-batch (number of data points used in each iteration).</li>
-            <li>$$ \sum_{i=k}^{k+m-1} $$: Summation over the m data points in the current mini-batch, starting from index k.</li>
-            <li>$$ x_j^{(i)} $$: The value of the j-th feature for the i-th data point in the mini-batch.</li>
-            <li>$$ (f_\beta(x^{(i)}) - y^{(i)}) $$: The error between the predicted value and the actual value for the i-th data point in the mini-batch.</li>
+            <li>\( \beta_j \): The j-th parameter being optimized.</li>
+            <li>\( \alpha \): The learning rate.</li>
+            <li>\( m \): The size of the mini-batch (number of data points used in each iteration).</li>
+            <li>\( \sum_{i=k}^{k+m-1} \): Summation over the m data points in the current mini-batch, starting from index k.</li>
+            <li>\( x_j^{(i)} \): The value of the j-th feature for the i-th data point in the mini-batch.</li>
+            <li>\( (f_\beta(x^{(i)}) - y^{(i)}) \): The error between the predicted value and the actual value for the i-th data point in the mini-batch.</li>
         </ul>
         <p>Mini-Batch GD updates parameters based on the gradient calculated from a small, randomly selected subset of the data. This provides a balance between the speed of SGD and the stability of Batch GD.</p>
         <p>This approach offers several advantages:</p>
@@ -254,84 +246,12 @@
         <div class="continue-button" onclick="showNextSection(6)">Continue</div>
     </section>
 
-    <section id="section6">
-        <h2>Test Your Understanding</h2>
-        <p>Let's put your knowledge to the test with a few final challenges!</p>
-        <div class="test-your-knowledge">
-            <h3>Question 1</h3>
-            <h4>Describe the difference between Gradient Descent and Stochastic Gradient Descent with Mini Batches?</h4>
-            <form id="question1">
-                <input type="radio" id="q1a" name="q1" value="a">
-                <label for="q1a">Gradient Descent uses all data points per iteration, SGD uses one, and Mini-Batch uses a subset.</label><br>
-                <input type="radio" id="q1b" name="q1" value="b">
-                <label for="q1b">Gradient Descent is faster than SGD, which is faster than Mini-Batch.</label><br>
-                <input type="radio" id="q1c" name="q1" value="c">
-                <label for="q1c">Gradient Descent is only for linear regression, while SGD and Mini-Batch are for neural networks.</label><br>
-                <input type="radio" id="q1d" name="q1" value="d">
-                <label for="q1d">They are all the same, just different names.</label><br>
-            </form>
-            <button class="check-button" onclick="checkAnswer('question1')">Check Answer</button>
-            <p id="q1-feedback" style="display: none;"></p>
-        </div>
-        <div class="test-your-knowledge">
-            <h3>Question 2</h3>
-            <h4>What is the general idea behind SGD?</h4>
-            <form id="question2">
-                <input type="radio" id="q2a" name="q2" value="a">
-                <label for="q2a">To use all data points in each iteration for maximum accuracy.</label><br>
-                <input type="radio" id="q2b" name="q2" value="b">
-                <label for="q2b">To randomly select one data point per iteration to update parameters.</label><br>
-                <input type="radio" id="q2c" name="q2" value="c">
-                <label for="q2c">To always find the global minimum of the cost function.</label><br>
-                <input type="radio" id="q2d" name="q2" value="d">
-                <label for="q2d">To avoid calculating gradients.</label><br>
-            </form>
-            <button class="check-button" onclick="checkAnswer('question2')">Check Answer</button>
-            <p id="q2-feedback" style="display: none;"></p>
-        </div>
-        <div class="test-your-knowledge">
-            <h3>Question 3</h3>
-            <h4>Calculate one iteration of SGD and adjust the trainable parameters for a linear regression problem using sum of squares loss function? (Use the same example as in Lesson 3, but only use one data point for the gradient calculation)</h4>
-            <div class="math-expression">
-                <p>Our data points are:</p>
-                <p>\[ x^{(1)} = 1, y^{(1)} = 2 \]</p>
-                <p>\[ x^{(2)} = 2, y^{(2)} = 3 \]</p>
-                <p>Our model is:</p>
-                <p>\[ f_\beta(x) = \beta_0 + \beta_1x \]</p>
-                <p>Initial parameters:</p>
-                <p>\[ \beta_0 = 0, \beta_1 = 0 \]</p>
-                <p>Learning rate:</p>
-                <p>\[ \alpha = 0.1 \]</p>
-                <p>Let's select data point 1 for this iteration:</p>
-                <p>\[ x^{(1)} = 1, y^{(1)} = 2 \]</p>
-                <p>Calculate prediction:</p>
-                <p>\[ f_\beta(x^{(1)}) = 0 + 0 * 1 = 0 \]</p>
-                <p>Calculate the gradient for $$\beta_0$$:</p>
-                <p>\[ \frac{\partial C}{\partial \beta_0} = (0 - 2) = -2 \]</p>
-                <p>Update $$\beta_0$$:</p>
-                <p>\[ \beta_0 = 0 - 0.1 * (-2) = 0.2 \]</p>
-                <p>Calculate the gradient for $$\beta_1$$:</p>
-                <p>\[ \frac{\partial C}{\partial \beta_1} = 1 * (0 - 2) = -2 \]</p>
-                <p>Update $$\beta_1$$:</p>
-                <p>\[ \beta_1 = 0 - 0.1 * (-2) = 0.2 \]</p>
-            </div>
-            <p>After one iteration with data point 1, $$\beta_0$$ is updated to 0.2 and $$\beta_1$$ is updated to 0.2. We would then select another random data point and continue iterating.</p>
-        </div>
-        <div class="test-your-knowledge">
-            <h3>Question 4</h3>
-            <h4>Explain why SGD tends to find local optima and what influence the learning rate has on this problem</h4>
-            <p>SGD can find local optima due to the noisy updates from using single data points. The learning rate's size affects the probability of escaping shallow local minima; a larger learning rate might help overcome small bumps but risks overshooting the minimum, while a smaller learning rate might get stuck in a local minimum.</p>
-        </div>
-        <div class="continue-button" onclick="showNextSection(7)">Continue</div>
-    </section>
+    
 
-    <section id="section7">
-        <h2>Conclusion: The Journey Continues</h2>
-        <div class="image-placeholder">
-            <img src="/placeholder.svg?height=300&width=600" alt="A hiker standing at the summit of a mountain, looking out at a vast landscape of other mountains to explore, symbolizing the completion of the course and the vast possibilities that lie ahead in the field of machine learning.">
-        </div>
-        <p>You've reached the end of this introductory course on Gradient Descent and Stochastic Gradient Descent. Congratulations! You've gained a solid foundation in these fundamental optimization techniques. You now understand how they work, their strengths and weaknesses, and how they're applied to train machine learning models.</p>
-        <p>But this is just the beginning! The world of machine learning is vast and ever-evolving. There are countless other optimization algorithms, advanced techniques, and exciting applications waiting to be explored. Keep learning, keep experimenting, and never stop your optimization journey!</p>
+    <section id="section6">
+        
+        <p>You've reached the end of this introductory course on Gradient Descent and Stochastic Gradient Descent. You've gained a solid foundation in these fundamental optimization techniques. You now understand how they work, their strengths and weaknesses, and how they're applied to train machine learning models.</p>
+        <p>But this is just the beginning! The world of machine learning is vast and ever-evolving. There are countless other optimization algorithms, advanced techniques, and exciting applications waiting to be explored.</p>
     </section>
 
     <script>
